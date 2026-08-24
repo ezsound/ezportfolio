@@ -28,91 +28,53 @@ window.addEventListener('DOMContentLoaded', autoToggleMobile);
 
 
 document.addEventListener("play", function (e) {
-  var audios = document.getElementsByTagName("audio");
-  for (var i = 0; i < audios.length; i++) {
+  const audios = document.getElementsByTagName("audio");
+  for (let i = 0; i < audios.length; i++) {
     if (audios[i] !== e.target) {
       audios[i].pause();
-			audios[i].currentTime = 0;
+      audios[i].currentTime = 0;
     }
   }
 }, true);
 
-document.addEventListener("play", function (e) {
-  var audios2 = document.getElementsByTagName("audio2");
-  for (var i = 0; i < audios2.length; i++) {
-    if (audios2[i] !== e.target) {
-      audios2[i].pause();
-			audios2[i].currentTime = 0;
-    }
+// 2. Helper function to play the next audio element in the container
+function playNextTrack(player) {
+  let nextElement = player.nextElementSibling;
+
+  // Scan through siblings until finding the next <audio> tag
+  while (nextElement && nextElement.tagName !== "AUDIO") {
+    nextElement = nextElement.nextElementSibling;
   }
-}, true);
 
-document.addEventListener("play", function (e) {
-  var audios3 = document.getElementsByTagName("audio3");
-  for (var i = 0; i < audios3.length; i++) {
-    if (audios3[i] !== e.target) {
-      audios3[i].pause();
-			audios3[i].currentTime = 0;
-    }
+  if (nextElement) {
+    // Force reload to clear stuck or broken buffers
+    nextElement.load(); 
+    
+    nextElement.play().catch(error => {
+      console.log("Autoplay failed or prevented by browser policy:", error);
+    });
   }
-}, true);
+}
 
-  const allAudioPlayers = document.querySelectorAll(".audiocontainer audio");
+// 3. Setup Listeners for all Container Types
+const containers = [".audiocontainer audio", ".filmContainer audio", ".miscContainer audio"];
 
-  allAudioPlayers.forEach(player => {
+containers.forEach(selector => {
+  const players = document.querySelectorAll(selector);
 
+  players.forEach(player => {
+    // Triggers when a track finishes naturally
     player.addEventListener("ended", () => {
-      let nextElement = player.nextElementSibling;
+      playNextTrack(player);
+    });
 
-      while (nextElement && nextElement.tagName !== "AUDIO") {
-        nextElement = nextElement.nextElementSibling;
-      }
-
-      if (nextElement) {
-        nextElement.play().catch(error => {
-          console.log("Autoplay prevented by browser policy:", error);
-        });
-      }
+    // FIX: Triggers if a track fails to load completely, gets stuck, or drops connection
+    player.addEventListener("error", () => {
+      console.warn(`Audio source error on element:`, player.src || "Unknown source");
+      playNextTrack(player); // Skip the broken track instead of freezing the player
     });
   });
-
-  const allAudioPlayers2 = document.querySelectorAll(".filmContainer audio");
-
-  allAudioPlayers2.forEach(player => {
-
-    player.addEventListener("ended", () => {
-      let nextElement = player.nextElementSibling;
-
-      while (nextElement && nextElement.tagName !== "AUDIO") {
-        nextElement = nextElement.nextElementSibling;
-      }
-
-      if (nextElement) {
-        nextElement.play().catch(error => {
-          console.log("Autoplay prevented by browser policy:", error);
-        });
-      }
-    });
-  });
-	
-	  const allAudioPlayers3 = document.querySelectorAll(".miscContainer audio");
-
-  allAudioPlayers3.forEach(player => {
-
-    player.addEventListener("ended", () => {
-      let nextElement = player.nextElementSibling;
-
-      while (nextElement && nextElement.tagName !== "AUDIO") {
-        nextElement = nextElement.nextElementSibling;
-      }
-
-      if (nextElement) {
-        nextElement.play().catch(error => {
-          console.log("Autoplay prevented by browser policy:", error);
-        });
-      }
-    });
-  });
+});
 	
 	
 function toggleImage() {
