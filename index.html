@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Elijah's portfolio for composition works">
+	<meta name="author" content="ezsounds" >
+	<meta name="keywords" content="Portfolio, Production, Music, Music Production, Composition, ezsounds, ez, sounds" >
+	<meta name="viewport" content="width=device-width, inital-scale=1.0" >
+    <title>EZ Portfolio</title>
+		<script src="script.js" defer></script>
+		<link rel="stylesheet" href="style.css" >
+	<nav>
+	
+	</nav>
+  </head>
+  <div class="flex-wrapper">
+	<body>
+		<header class="content">
+			<nav>
+				<br/>
+				<!--damn g you looking fine tn frfr on my mama  --> 
+				<h1>ELIJAH Z. MARTIN</h1>
+				<h5>ezsounds@pm.me - <a target="_blank" href="https://www.instagram.com/ezsoundguy?igsi=MXAxamNkOHhsMGswZQ%3D%3D&utm_source=qr"><img src="instalink.png" alt="instagram" class="social-link"></a></h5>
+				<h5 class="mobile-footer">all works are creatively licensed under CC BY-NC-ND ©2026 Elijah Martin</h5>
+				<hr/>
+
+				<a href="#" onclick="toggleImage()" id="link1" class="link1"> <h2>COMPOSITION DEMOS</a></h2>
+				<span class="linkSet2" id="linkSet2">
+			<h4><a href="#" onclick="loadaudiocontainer()" id="link2" class="link4">GAMES</a>/<a href="#" onclick="loadFilmContainer()" id="link3" class="link4">FILM</a>/<a href="#" onclick="loadMiscContainer()" id="link4" class="link4">MISC</a></h4>
+			  </span>
+		<div class="media-container" id="media-container">
+			<img src="wanderdude2.png" usemap="#image-button-map" id="player" class="player" alt="turn on to hear some tunes">
+			
+			<div class="audiocontainercontainer">
+				<div class="audiocontainer" id="audiocontainer">
+				
+					<div id="wavplayer" class="wavplayer">
+							<h3>(active) Final Fight</h3>
+							<audio id="my-audio" class="my-audio" controls>
+									<source src="darksynth.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+							</audio>
+						
+						<h3>(cutscene + active) Plasmordial Golem</h3>
+							<audio class="my-audio" controls>
+									<source src="plasmordial-golem.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+							</audio>
+							
+						<h3>(active) 16-Bit 1-v-1</h3>
+							<audio class="my-audio"  controls>
+									<source src="16bit1v1.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+							</audio>
+							<h3>(idle) Waiting Room at the Swamp ER</h3>
+							<audio class="my-audio" controls>
+									<source src="swamper.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+							</audio>
+						
+							<h3>(idle) A Short Walk at Sunset</h3>
+							<audio  class="my-audio" controls>
+									<source src="sunset.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+							</audio>
+						
+							<h3>(intro) Versi</h3>
+							<audio class="my-audio" controls>
+									<source src="versi.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+							</audio>
+							
+							<h3>(intro) Honey I Bitcrushed the Strokes</h3>
+							<audio class="my-audio" controls>
+									<source src="honeyi.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+							</audio>
+						
+					
+    
+					</div>
+			
+		   
+				</div>	
+			
+			
+					<div class="filmContainer" id="filmContainer">
+				
+						<div id="wavplayer2" class="wavplayer2">
+								<h3>(bgm) Aimless Wanderer</h3>
+								<audio id="my-audio2" class ="my-audio2" controls>
+										<source src="aimless-wanderer.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+								</audio>
+								
+								<h3>(bgm) Swangin</h3>
+								<audio id="my-audio2" class ="my-audio2" controls>
+										<source src="swangin.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+								</audio>
+								
+								<h3>(bgm) Couldn't Keep it Closed</h3>
+								<audio id="my-audio2" class ="my-audio2" controls>
+										<source src="closed.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+								</audio>
+								
+								<h3>(bgm) Chase</h3>
+								<audio id="my-audio2" class ="my-audio2" controls>
+										<source src="chase.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+								</audio>
+								
+								<h3>(theme) Fuis Ton Destin</h3>
+								<audio id="my-audio2" class ="my-audio2" controls>
+										<source src="destin.wav" type="audio/wav">
+									Your browser does not support the audio element.
+								</audio>
+    
+						</div>
+				
+					</div>
+						<div class="miscContainer" id="miscContainer">
+				
+							<div id="wavplayer3" class="wavplayer3">
+								<h3>(beat) Reminiscience</h3>
+								<audio id="my-audio3" class ="my-audio3" controls>
+										<source src="reminiscience.mp3" type="audio/mpeg">
+										Your browser does not support the audio element.
+								</audio>
+								
+								<h3>(misc) -75</h3>
+								<audio id="my-audio3" class ="my-audio3" controls>
+										<source src="-75.mp3" type="audio/mpeg">
+										Your browser does not support the audio element.
+								</audio>
+						
+    
+							</div>
+			
+			
+		
+						</div>
+			</div>
+		
+		</div>
+		
+		
+		<map id="playbutton" class="playbutton" name="image-button-map">
+			 <area class="playbutton" shape="rect" coords="200, 0, 270, 30" href="javascript:void(0);" alt="Play Audio Button" onclick="loadAudioPlayer()">
+		</map>
+			 
+		
+			</nav>
+		
+		    
+		</header>
+		<main>
+			
+		</main>
+		<footer>
+			<i>all works are creatively licensed under CC BY-NC-ND ©2026 Elijah Martin</i>
+		</footer>
+	</body>
+	</div>
+</html>
