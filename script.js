@@ -57,19 +57,17 @@ document.addEventListener("play", function (e) {
   }
 }, true);
 
-  const allAudioPlayers = document.querySelectorAll('.audiocontainer audio');
+  const allAudioPlayers = document.querySelectorAll(".audiocontainer audio");
 
   allAudioPlayers.forEach(player => {
-    // Listen for when the current audio track finishes playing
-    player.addEventListener('ended', () => {
+
+    player.addEventListener("ended", () => {
       let nextElement = player.nextElementSibling;
 
-      // Loop through upcoming elements until we find an AUDIO tag or run out of elements
-      while (nextElement && nextElement.tagName !== 'AUDIO') {
+      while (nextElement && nextElement.tagName !== "audio") {
         nextElement = nextElement.nextElementSibling;
       }
 
-      // If an audio player is found, play it
       if (nextElement) {
         nextElement.play().catch(error => {
           console.log("Autoplay prevented by browser policy:", error);
@@ -78,6 +76,45 @@ document.addEventListener("play", function (e) {
     });
   });
 
+  const allAudioPlayers2 = document.querySelectorAll(".filmContainer audio");
+
+  allAudioPlayers2.forEach(player => {
+
+    player.addEventListener("ended", () => {
+      let nextElement = player.nextElementSibling;
+
+      while (nextElement && nextElement.tagName !== "audio") {
+        nextElement = nextElement.nextElementSibling;
+      }
+
+      if (nextElement) {
+        nextElement.play().catch(error => {
+          console.log("Autoplay prevented by browser policy:", error);
+        });
+      }
+    });
+  });
+	
+	  const allAudioPlayers3 = document.querySelectorAll(".miscContainer audio");
+
+  allAudioPlayers3.forEach(player => {
+
+    player.addEventListener("ended", () => {
+      let nextElement = player.nextElementSibling;
+
+      while (nextElement && nextElement.tagName !== "audio") {
+        nextElement = nextElement.nextElementSibling;
+      }
+
+      if (nextElement) {
+        nextElement.play().catch(error => {
+          console.log("Autoplay prevented by browser policy:", error);
+        });
+      }
+    });
+  });
+	
+	
 function toggleImage() {
 
 	console.log("click!");
