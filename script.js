@@ -57,17 +57,21 @@ document.addEventListener("play", function (e) {
   }
 }, true);
 
- const allAudioPlayers = document.querySelectorAll('.audiocontainer audio');
+  const allAudioPlayers = document.querySelectorAll('.audiocontainer audio');
 
   allAudioPlayers.forEach(player => {
     // Listen for when the current audio track finishes playing
     player.addEventListener('ended', () => {
-      // Find the next audio element immediately after the current one
-      const nextPlayer = player.nextElementSibling;
+      let nextElement = player.nextElementSibling;
 
-      // Verify the next element exists and is actually an audio tag
-      if (nextPlayer && nextPlayer.tagName === 'audio') {
-        nextPlayer.play().catch(error => {
+      // Loop through upcoming elements until we find an AUDIO tag or run out of elements
+      while (nextElement && nextElement.tagName !== 'AUDIO') {
+        nextElement = nextElement.nextElementSibling;
+      }
+
+      // If an audio player is found, play it
+      if (nextElement) {
+        nextElement.play().catch(error => {
           console.log("Autoplay prevented by browser policy:", error);
         });
       }
