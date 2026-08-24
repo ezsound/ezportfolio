@@ -1,6 +1,7 @@
 body { 
 font-family: Comic Sans, Arial, sans-serif;
 background-color: #FFFCF0;
+
 }
 
 .link1 {
@@ -133,17 +134,24 @@ footer {
 	
 
 	body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-  margin: 0;
-	overflow-y: auto;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100dvh !important;
+	max-width: 100% !important;
+  margin: 0 !important;
+	overflow-y: auto !important;
 	overflow-x: hidden !important; 
+	align-items: center !important;
+	justify-content: center !important;
+
+
 }
 
 html {
   max-width: 100%;
   overflow-x: hidden;
+	overflow-y: scroll !important;
+}
 }
 
 .mobile-footer {
@@ -229,6 +237,7 @@ hr:after {
 
 	
 	.media-container {
+		box-sizing: border-box;
 		display: flex;
 		align-items: center; 
 		overflow-y: auto;
@@ -243,10 +252,10 @@ hr:after {
 	padding: 15px !important;
 	pointer-events: none;
 	opacity: 0;
-	transition: opacity .5s;
+	transition: opacity .5s, transform 1s;
 	display: flex;
   max-height: 500px;
-	max-width: 500px !important;
+	max-width: 90% !important;
 	width: fit-content !important;
 	overflow-y: auto;
 	flex-direction: column;
@@ -260,6 +269,7 @@ hr:after {
 }
 
 .filmContainer {
+	box-sizing: border-box;
 	border: 2px solid transparent;
 	border-radius: 8px;
 	border-color: #452A1A;
@@ -267,10 +277,10 @@ hr:after {
 	padding: 15px !important;
 pointer-events: none;
 	opacity: 0;
-	transition: opacity .5s;
+	transition: opacity .5s, transform 1s;
 	display: flex;
   max-height: 500px;
-	max-width: 500px !important;
+	max-width: 100% !important;
 		width: fit-content !important;
 	overflow-y: auto;
 	flex-direction: column;
@@ -292,10 +302,10 @@ pointer-events: none;
 	padding: 15px !important;
 pointer-events: none;
 	opacity: 0;
-	transition: opacity .5s;
+	transition: opacity .5s, transform 1s;
 	display: flex;
   max-height: 500px;
-	max-width: 500px !important;
+	max-width: 100% !important;
 		width: fit-content !important;
 	overflow-y: auto;
 	flex-direction: column;
