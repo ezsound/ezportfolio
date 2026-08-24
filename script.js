@@ -64,7 +64,7 @@ document.addEventListener("play", function (e) {
     player.addEventListener("ended", () => {
       let nextElement = player.nextElementSibling;
 
-      while (nextElement && nextElement.tagName !== "audio") {
+      while (nextElement && nextElement.tagName !== "AUDIO") {
         nextElement = nextElement.nextElementSibling;
       }
 
@@ -83,7 +83,7 @@ document.addEventListener("play", function (e) {
     player.addEventListener("ended", () => {
       let nextElement = player.nextElementSibling;
 
-      while (nextElement && nextElement.tagName !== "audio") {
+      while (nextElement && nextElement.tagName !== "AUDIO") {
         nextElement = nextElement.nextElementSibling;
       }
 
@@ -102,7 +102,7 @@ document.addEventListener("play", function (e) {
     player.addEventListener("ended", () => {
       let nextElement = player.nextElementSibling;
 
-      while (nextElement && nextElement.tagName !== "audio") {
+      while (nextElement && nextElement.tagName !== "AUDIO") {
         nextElement = nextElement.nextElementSibling;
       }
 
