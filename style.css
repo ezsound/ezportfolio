@@ -152,12 +152,13 @@ html {
   overflow-x: hidden;
 	overflow-y: scroll !important;
 }
-}
 
 .mobile-footer {
 	display: flex !important;
 	text-align: center !important;
 }
+
+
 
 main {
   flex-grow: 1;
