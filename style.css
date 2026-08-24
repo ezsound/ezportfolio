@@ -265,7 +265,7 @@ hr:after {
 
      left: 50%;
     top: 50%;
-		transform: translate(-50%, 10%) !important;
+		transform: translate(-50%, 18%) !important;
 	align-items: center;
 }
 
@@ -290,7 +290,7 @@ pointer-events: none;
 
      left: 50%;
     top: 50%;
-		transform: translate(-50%, 10%) !important;
+		transform: translate(-50%, 20%) !important;
 	align-items: center;
 	
 }
@@ -315,7 +315,7 @@ pointer-events: none;
 
      left: 50%;
     top: 50%;
-		transform: translate(-50%, 23%) !important;
+		transform: translate(-50%, 30%) !important;
 	align-items: center;
 }
 
@@ -404,7 +404,7 @@ pointer-events: none;
 	opacity: 0;
 	transition: opacity .5s;
 	display: flex;
-  max-height: 500px;
+  max-height: 46.30%;
 	max-width: 15.55%;
 	overflow-y: auto;
 	flex-direction: column;
@@ -427,7 +427,7 @@ pointer-events: none;
 	opacity: 0;
 	transition: opacity .5s;
 	display: flex;
-  max-height: 500px;
+  max-height: 46.30%;
 	max-width: 30%;
 	overflow-y: auto;
 	flex-direction: column;
@@ -451,7 +451,7 @@ pointer-events: none;
 	opacity: 0;
 	transition: opacity .5s;
 	display: flex;
-  max-height: 500px;
+  max-height: 46.30%;
 	max-width: 30%;
 	overflow-y: auto;
 	flex-direction: column;
