@@ -429,6 +429,7 @@ hr:after {
 	
 	.link1 {
 		pointer-events: none;
+		text-decoration: none;
 	}
 
 	
